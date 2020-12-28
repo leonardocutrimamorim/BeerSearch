@@ -57,6 +57,8 @@ class BeerViewController: UIViewController {
     }
 
     
+    
+    
 }
 
 
@@ -105,19 +107,21 @@ extension BeerViewController: UITableViewDataSource {
     
 }
 
-extension BeerViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        var beerDetail: Beer
-        if isFiltering(){
-            beerDetail = beerViewModel.filteredBeers[indexPath.row]
-        } else {
-            beerDetail = beerViewModel.beers[indexPath.row]
-        }
-        performSegue(withIdentifier: "detailSegue", sender: beerDetail)
-        
-    }
-}
+
+
+//extension BeerViewController: UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//        var beerDetail: Beer
+//        if isFiltering(){
+//            beerDetail = beerViewModel.filteredBeers[indexPath.row]
+//        } else {
+//            beerDetail = beerViewModel.beers[indexPath.row]
+//        }
+//        performSegue(withIdentifier: "detailSegue", sender: beerDetail)
+//
+//    }
+//}
 
 extension BeerViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
